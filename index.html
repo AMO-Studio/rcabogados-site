@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reymond Colombo &amp; Cía — Derecho de familia en Chile</title>
+  <meta name="description" content="Estudio jurídico especializado en derecho de familia. Divorcios, pensión de alimentos, cuidado personal, compensación económica y mediación. Las Condes, Santiago." />
+
+  <!-- Tipografía B — Editorial: Fraunces + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ==========================================================
+       TOKENS
+       ========================================================== */
+    :root {
+      /* Paleta Blanca */
+      --navy:        #112B45;
+      --navy-deep:   #0E2540;
+      --cream:       #FFFFFF;       /* fondo principal */
+      --cream-soft:  #F7F6F1;       /* superficies suaves */
+      --gold:        #9C7C4D;
+      --gold-soft:   #C7AE82;
+      --ink:         #1F1F1F;
+      --ink-soft:    #4A4A4A;
+      --muted:       #6F6F6F;
+      --rule:        #ECE9E2;
+      --rule-strong: #D5D1C7;
+      --white:       #FFFFFF;
+      --nav-bg:      rgba(255, 255, 255, 0.85);
+
+      /* Tipografía — Fraunces + Inter */
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+      --display-tracking: -0.02em;
+      --body-tracking:    -0.005em;
+
+      /* Escala */
+      --step-0: 0.875rem;   /* 14 */
+      --step-1: 1rem;       /* 16 */
+      --step-2: 1.125rem;   /* 18 */
+      --step-3: 1.375rem;   /* 22 */
+      --step-4: 1.75rem;    /* 28 */
+      --step-5: 2.5rem;     /* 40 */
+      --step-6: 3.5rem;     /* 56 */
+      --step-7: 4.75rem;    /* 76 */
+
+      /* Espaciado */
+      --s-1: 4px;
+      --s-2: 8px;
+      --s-3: 16px;
+      --s-4: 24px;
+      --s-5: 32px;
+      --s-6: 48px;
+      --s-7: 64px;
+      --s-8: 96px;
+      --s-9: 128px;
+
+      --radius:    2px;
+      --radius-lg: 6px;
+
+      --maxw: 1180px;
+    }
+
+
+    /* ==========================================================
+       BASE
+       ========================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: var(--step-2);
+      line-height: 1.65;
+      letter-spacing: var(--body-tracking);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      letter-spacing: var(--display-tracking);
+      color: var(--navy);
+      margin: 0 0 var(--s-4);
+      line-height: 1.1;
+    }
+
+    h1 { font-size: clamp(2.25rem, 5vw, var(--step-7)); font-weight: 500; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, var(--step-5)); }
+    h3 { font-size: var(--step-3); font-weight: 500; }
+    h4 { font-size: var(--step-2); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--navy); }
+
+    p { margin: 0 0 var(--s-3); }
+    a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold-soft); text-underline-offset: 4px; }
+    a:hover { text-decoration-color: var(--gold); }
+
+    .container {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--s-5);
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--step-0);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-3);
+      margin-bottom: var(--s-4);
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+
+    .lead {
+      font-size: var(--step-3);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 60ch;
+    }
+
+    .rule {
+      height: 1px;
+      background: var(--rule);
+      border: 0;
+      margin: 0;
+    }
+
+    section { padding: var(--s-9) 0; }
+    @media (max-width: 720px) { section { padding: var(--s-7) 0; } }
+
+    /* ==========================================================
+       BOTONES
+       ========================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-size: var(--step-1);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: all 200ms ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: var(--cream);
+    }
+    .btn-primary:hover { background: var(--navy-deep); transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--rule-strong);
+    }
+    .btn-ghost:hover { border-color: var(--navy); background: var(--cream-soft); }
+
+    /* ==========================================================
+       NAV
+       ========================================================== */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--nav-bg, rgba(248, 244, 235, 0.85));
+      backdrop-filter: saturate(160%) blur(8px);
+      -webkit-backdrop-filter: saturate(160%) blur(8px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 200ms ease;
+    }
+    .nav.is-scrolled { border-bottom-color: var(--rule); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--s-3) 0;
+      gap: var(--s-5);
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: var(--step-2);
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand small {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      color: var(--gold);
+      display: block;
+      margin-top: 2px;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: var(--s-5);
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .nav-links a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: var(--step-1);
+      font-family: var(--font-body);
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    @media (max-width: 880px) {
+      .nav-links { display: none; }
+    }
+
+    /* ==========================================================
+       HERO — Centrado, sereno
+       ========================================================== */
+    .hero {
+      padding: var(--s-9) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; right: -10%;
+      width: 60%; height: 100%;
+      background: radial-gradient(ellipse at center, rgba(156, 124, 77, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 60ch;
+      margin: 0 auto;
+      padding: var(--s-7) 0;
+    }
+    .hero .eyebrow {
+      justify-content: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.25rem, 5.5vw, 4.25rem);
+      font-weight: 400;
+      max-width: 18ch;
+      margin: 0 auto var(--s-5);
+      line-height: 1.05;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .hero .lead {
+      max-width: 48ch;
+      margin: 0 auto var(--s-6);
+      font-size: var(--step-2);
+    }
+    .hero-cta {
+      display: flex;
+      gap: var(--s-3);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: var(--s-5);
+    }
+    .hero .micro-line {
+      margin-top: var(--s-5);
+      font-size: var(--step-0);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Faja de credenciales */
+    .trust {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: var(--s-5) 0;
+      background: var(--cream-soft);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--s-5);
+      align-items: center;
+    }
+    @media (max-width: 720px) {
+      .trust-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-1);
+    }
+    .trust-item strong {
+      font-family: var(--font-display);
+      font-size: var(--step-4);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .trust-item span {
+      font-size: var(--step-0);
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ==========================================================
+       FILOSOFÍA
+       ========================================================== */
+    .philosophy {
+      background: var(--cream-soft);
+      border-bottom: 1px solid var(--rule);
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--s-8);
+    }
+    @media (max-width: 880px) {
+      .philosophy-grid { grid-template-columns: 1fr; gap: var(--s-5); }
+    }
+    .philosophy h2 {
+      max-width: 14ch;
+    }
+    .philosophy-body p {
+      font-size: var(--step-2);
+      color: var(--ink-soft);
+      max-width: 60ch;
+    }
+
+    /* ==========================================================
+       ÁREAS DE PRÁCTICA
+       ========================================================== */
+    .areas {
+      background: var(--cream);
+    }
+    .areas-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: var(--s-5);
+      margin-bottom: var(--s-7);
+      flex-wrap: wrap;
+    }
+    .areas-head h2 { margin: 0; max-width: 16ch; }
+    .areas-head p {
+      max-width: 36ch;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+    @media (max-width: 980px) {
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .areas-grid { grid-template-columns: 1fr; }
+    }
+    .area {
+      padding: var(--s-5);
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      background: var(--cream);
+      transition: background 200ms ease;
+      min-height: 200px;
+    }
+    .area:hover { background: var(--cream-soft); }
+    .area-num {
+      font-family: var(--font-display);
+      font-size: var(--step-0);
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+    .area h3 {
+      font-size: var(--step-3);
+      font-weight: 500;
+      margin: 0;
+      color: var(--navy);
+    }
+    .area p {
+      font-size: var(--step-1);
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ==========================================================
+       EQUIPO
+       ========================================================== */
+    .team {
+      background: var(--navy);
+      color: var(--cream);
+    }
+    .team h2 { color: var(--cream); }
+    .team .eyebrow { color: var(--gold-soft); }
+    .team .eyebrow::before { background: var(--gold-soft); }
+    .team-head {
+      max-width: 56ch;
+      margin-bottom: var(--s-7);
+    }
+    .team-head p {
+      color: var(--gold-soft);
+      font-size: var(--step-2);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-6);
+    }
+    @media (max-width: 720px) {
+      .team-grid { grid-template-columns: 1fr; gap: var(--s-5); }
+    }
+    .partner {
+      padding: var(--s-5);
+      border: 1px solid rgba(216, 194, 155, 0.18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .partner h3 {
+      color: var(--cream);
+      margin-bottom: var(--s-1);
+      font-size: var(--step-4);
+    }
+    .partner-role {
+      font-size: var(--step-0);
+      color: var(--gold-soft);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: var(--s-4);
+      display: block;
+    }
+    .partner p {
+      color: rgba(248, 244, 235, 0.78);
+      font-size: var(--step-1);
+      line-height: 1.6;
+    }
+    .partner a {
+      color: var(--gold-soft);
+      text-decoration-color: rgba(216, 194, 155, 0.4);
+    }
+    .partner a:hover { color: var(--cream); }
+
+    /* ==========================================================
+       PROCESO
+       ========================================================== */
+    .process { background: var(--cream-soft); }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--s-5);
+      margin-top: var(--s-7);
+    }
+    @media (max-width: 880px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+    .step {
+      padding-top: var(--s-4);
+      border-top: 2px solid var(--navy);
+    }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: var(--step-0);
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: var(--s-3);
+      display: block;
+    }
+    .step h3 {
+      font-size: var(--step-3);
+      margin-bottom: var(--s-2);
+    }
+    .step p {
+      font-size: var(--step-1);
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* ==========================================================
+       CONTACTO
+       ========================================================== */
+    .contact { background: var(--cream); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--s-7);
+    }
+    @media (max-width: 880px) {
+      .contact-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+    }
+
+    form .field {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+      margin-bottom: var(--s-4);
+    }
+    form .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-4);
+    }
+    @media (max-width: 560px) {
+      form .field-row { grid-template-columns: 1fr; }
+    }
+    form label {
+      font-size: var(--step-0);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    form input,
+    form select,
+    form textarea {
+      font-family: var(--font-body);
+      font-size: var(--step-1);
+      padding: 12px 14px;
+      background: var(--cream-soft);
+      border: 1px solid var(--rule-strong);
+      border-radius: var(--radius);
+      color: var(--ink);
+      transition: border-color 150ms ease, background 150ms ease;
+    }
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+      background: var(--white);
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-note {
+      font-size: var(--step-0);
+      color: var(--muted);
+      margin-top: var(--s-3);
+    }
+    .form-note a { color: var(--navy); }
+
+    .contact-info dl {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: var(--s-3) var(--s-5);
+      margin: var(--s-5) 0 var(--s-6);
+    }
+    .contact-info dt {
+      font-size: var(--step-0);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .contact-info dd {
+      margin: 0;
+      font-size: var(--step-1);
+      color: var(--ink);
+    }
+    .contact-info dd a { color: var(--navy); }
+    .map {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      filter: grayscale(0.3) contrast(0.95);
+    }
+
+    /* ==========================================================
+       FOOTER
+       ========================================================== */
+    footer {
+      background: var(--navy-deep);
+      color: var(--cream);
+      padding: var(--s-7) 0 var(--s-5);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: var(--s-5);
+      margin-bottom: var(--s-6);
+    }
+    @media (max-width: 880px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    footer h4 {
+      color: var(--gold-soft);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      margin-bottom: var(--s-3);
+    }
+    footer p, footer a {
+      color: rgba(248, 244, 235, 0.78);
+      font-size: var(--step-1);
+      text-decoration: none;
+      line-height: 1.6;
+    }
+    footer a:hover { color: var(--cream); }
+    .footer-brand .brand {
+      color: var(--cream);
+      font-size: var(--step-3);
+    }
+    .footer-brand .brand small { color: var(--gold-soft); }
+    .footer-brand p {
+      margin-top: var(--s-3);
+      max-width: 30ch;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(216, 194, 155, 0.18);
+      padding-top: var(--s-4);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      font-size: var(--step-0);
+      color: rgba(248, 244, 235, 0.55);
+    }
+
+    /* ==========================================================
+       MOTION (sutil)
+       ========================================================== */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 700ms ease, transform 700ms ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===========================
+     NAV
+     =========================== -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Reymond Colombo y Cía, inicio">
+      Reymond Colombo &amp; Cía
+      <small>Abogados · Derecho de familia</small>
+    </a>
+    <ul class="nav-links" aria-label="Navegación principal">
+      <li><a href="#filosofia">Estudio</a></li>
+      <li><a href="#areas">Áreas</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Agendar consulta</a>
+  </div>
+</nav>
+
+<!-- ===========================
+     HERO
+     =========================== -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow">Derecho de familia · Santiago de Chile</span>
+      <h1>Asesoría legal con la <em>calma</em> que el momento exige.</h1>
+      <p class="lead">Estudio jurídico chileno especializado en derecho de familia. Trabajo cercano, preciso y confidencial desde Las Condes.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary">Agendar primera consulta</a>
+        <a href="tel:+56222316249" class="btn btn-ghost">+56 2 2231 6249</a>
+      </div>
+      <p class="micro-line">Divorcios · Pensión de alimentos · Mediación · Cuidado personal</p>
+    </div>
+  </div>
+</header>
+
+<!-- ===========================
+     TRUST STRIP
+     =========================== -->
+<section class="trust" style="padding-top: var(--s-5); padding-bottom: var(--s-5);">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <strong>Décadas</strong>
+        <span>de práctica continua en derecho de familia</span>
+      </div>
+      <div class="trust-item">
+        <strong>1 a 1</strong>
+        <span>atención directa con uno de los socios</span>
+      </div>
+      <div class="trust-item">
+        <strong>RM</strong>
+        <span>tribunales de familia de Santiago</span>
+      </div>
+      <div class="trust-item">
+        <strong>Mediación</strong>
+        <span>mediadores acreditados ante el Ministerio de Justicia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FILOSOFÍA
+     =========================== -->
+<section class="philosophy" id="filosofia">
+  <div class="container">
+    <div class="philosophy-grid">
+      <div>
+        <span class="eyebrow">Nuestra forma de trabajar</span>
+        <h2>Cada caso de familia es, antes que nada, una historia.</h2>
+      </div>
+      <div class="philosophy-body">
+        <p>Reymond Colombo &amp; Cía es un estudio chico por convicción. Recibimos un número limitado de causas para que cada cliente trate siempre con uno de los socios, no con un asistente rotativo.</p>
+        <p>Creemos que el buen derecho de familia no se mide solo por la sentencia, sino por cómo dejó a la familia que cruzó por nuestro escritorio. Por eso explicamos cada paso en castellano claro, anticipamos riesgos y, cuando es posible, preferimos un acuerdo bien hecho a un juicio largo.</p>
+        <p>Trabajamos con discreción y rigor: respondemos correos en menos de 24 horas hábiles, mantenemos un calendario realista de plazos y no tomamos un caso si no creemos poder aportar valor real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     ÁREAS DE PRÁCTICA
+     =========================== -->
+<section class="areas" id="areas">
+  <div class="container">
+    <div class="areas-head">
+      <div>
+        <span class="eyebrow">Áreas de práctica</span>
+        <h2>Derecho de familia, en toda su extensión.</h2>
+      </div>
+      <p>Materias en las que asesoramos y representamos ante tribunales y centros de mediación a lo largo de Chile.</p>
+    </div>
+
+    <div class="areas-grid">
+      <article class="area">
+        <span class="area-num">01</span>
+        <h3>Divorcios</h3>
+        <p>De común acuerdo, unilaterales y por culpa. Negociación de regulaciones complementarias y compensación económica.</p>
+      </article>
+      <article class="area">
+        <span class="area-num">02</span>
+        <h3>Pensión de alimentos</h3>
+        <p>Demanda, rebaja, aumento, cese y cobro ejecutivo. Trabajamos también con el Registro Nacional de Deudores.</p>
+      </article>
+      <article class="area">
+        <span class="area-num">03</span>
+        <h3>Cuidado personal</h3>
+        <p>Tuición de hijos e hijas, cuidado compartido y modificación de regímenes vigentes.</p>
+      </article>
+      <article class="area">
+        <span class="area-num">04</span>
+        <h3>Régimen de relación directa y regular</h3>
+        <p>Definición y modificación del régimen de visitas, incluyendo casos con padres en distinta ciudad o país.</p>
+      </article>
+      <article class="area">
+        <span class="area-num">05</span>
+        <h3>Compensación económica</h3>
+        <p>Cálculo, demanda y defensa de compensación económica en sede judicial o vía acuerdo.</p>
+      </article>
+      <article class="area">
+        <span class="area-num">06</span>
+        <h3>Mediación familiar</h3>
+        <p>Mediación previa obligatoria y voluntaria, conducida con mediadores acreditados por el Ministerio de Justicia.</p>
+      </article>
+      <article class="area">
+        <span class="area-num">07</span>
+        <h3>Violencia intrafamiliar</h3>
+        <p>Medidas de protección, denuncias y representación de víctimas. Coordinación con red de apoyo psicosocial.</p>
+      </article>
+      <article class="area">
+        <span class="area-num">08</span>
+        <h3>Filiación y patrimonio</h3>
+        <p>Reconocimiento de paternidad, impugnaciones, regímenes patrimoniales y acuerdos de unión civil.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     EQUIPO
+     =========================== -->
+<section class="team" id="equipo">
+  <div class="container">
+    <div class="team-head">
+      <span class="eyebrow">Quienes los atienden</span>
+      <h2>Dos socios. Una sola conversación con usted.</h2>
+      <p>Cuando contrata a Reymond Colombo &amp; Cía, contrata a Paulina o a Julio. No los reemplaza un asociado a mitad de causa.</p>
+    </div>
+
+    <div class="team-grid">
+      <article class="partner">
+        <h3>Paulina Colombo</h3>
+        <span class="partner-role">Socia · Derecho de familia</span>
+        <p>Litigante con foco en cuidado personal, pensión de alimentos y compensación económica. Se distingue por la conducción serena de causas de alta tensión y por el trabajo coordinado con equipos psicosociales cuando hay niños involucrados.</p>
+        <p><a href="mailto:pcolombo@rcabogados.cl">pcolombo@rcabogados.cl</a></p>
+      </article>
+      <article class="partner">
+        <h3>Julio Reymond</h3>
+        <span class="partner-role">Socio · Derecho de familia y patrimonial</span>
+        <p>Asesora en divorcios, regímenes patrimoniales, acuerdos de unión civil y planificación de sucesiones familiares. Negociador metódico, prefiere construir acuerdos sólidos antes que ganar batallas que dejan secuelas.</p>
+        <p><a href="mailto:jreymond@rcabogados.cl">jreymond@rcabogados.cl</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     PROCESO
+     =========================== -->
+<section class="process" id="proceso">
+  <div class="container">
+    <div style="max-width: 56ch;">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Un proceso ordenado, sin sorpresas.</h2>
+      <p style="color: var(--ink-soft); font-size: var(--step-2); margin: 0;">Desde la primera reunión sabrá qué esperar, cuánto puede tardar su caso y cuál es el rango de honorarios.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="step">
+        <span class="step-num">01 · 45 min</span>
+        <h3>Primera reunión</h3>
+        <p>Escuchamos el caso completo, revisamos antecedentes y delimitamos qué es razonable esperar. Sin compromiso.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02 · 5 a 7 días</span>
+        <h3>Análisis y propuesta</h3>
+        <p>Entregamos por escrito la estrategia recomendada, plazos estimados y honorarios cerrados o por etapa.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03 · variable</span>
+        <h3>Acción legal o mediación</h3>
+        <p>Representación ante tribunales de familia o centros de mediación. Reportes mensuales escritos del estado de la causa.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04 · post-causa</span>
+        <h3>Acompañamiento</h3>
+        <p>Seguimiento de cumplimiento, modificaciones futuras y consultas relacionadas durante los 12 meses posteriores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     CONTACTO
+     =========================== -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- FORMULARIO -->
+      <div>
+        <span class="eyebrow">Agendar consulta</span>
+        <h2>Cuéntenos su caso.</h2>
+        <p style="color: var(--ink-soft); max-width: 50ch;">
+          Respondemos en menos de 24 horas hábiles. La primera reunión tiene una duración aproximada de 45 minutos y puede ser presencial u online.
+        </p>
+
+        <!--
+          NOTA DE INTEGRACIÓN
+          Reemplazar el atributo action por el endpoint del proveedor elegido:
+            · Formspree:    action="https://formspree.io/f/XXXXXXXX"
+            · Web3Forms:    action="https://api.web3forms.com/submit"
+            · Netlify Forms: añadir netlify="true" name="contacto" al <form>
+        -->
+        <form action="#" method="post" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="rut">RUT (opcional)</label>
+              <input id="rut" name="rut" type="text" placeholder="12.345.678-9" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 ..." />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="materia">Materia</label>
+            <select id="materia" name="materia" required>
+              <option value="" selected disabled>Seleccione un área</option>
+              <option>Divorcio</option>
+              <option>Pensión de alimentos</option>
+              <option>Cuidado personal</option>
+              <option>Régimen de relación directa y regular</option>
+              <option>Compensación económica</option>
+              <option>Mediación familiar</option>
+              <option>Violencia intrafamiliar</option>
+              <option>Filiación / patrimonial</option>
+              <option>Otra materia</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mensaje">Resumen del caso</label>
+            <textarea id="mensaje" name="mensaje" required placeholder="Cuéntenos en pocas líneas qué situación enfrenta y qué busca resolver."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+
+          <p class="form-note">
+            Al enviar acepta nuestra política de tratamiento de datos. La información compartida queda protegida por secreto profesional.
+            ¿Prefiere escribirnos directamente? <a href="mailto:rcabogados@rcabogados.cl">rcabogados@rcabogados.cl</a>
+          </p>
+        </form>
+      </div>
+
+      <!-- DATOS DIRECTOS -->
+      <aside class="contact-info" aria-label="Datos de contacto">
+        <span class="eyebrow">Datos directos</span>
+        <h2 style="font-size: var(--step-4);">Las Condes, Santiago</h2>
+
+        <dl>
+          <dt>Dirección</dt>
+          <dd>Augusto Leguía Sur 79<br/>Oficina 1501, Las Condes</dd>
+
+          <dt>Teléfono</dt>
+          <dd><a href="tel:+56222316249">+56 2 2231 6249</a></dd>
+
+          <dt>Correo</dt>
+          <dd><a href="mailto:rcabogados@rcabogados.cl">rcabogados@rcabogados.cl</a></dd>
+
+          <dt>Horario</dt>
+          <dd>Lun – Vie · 09:00 a 18:00</dd>
+        </dl>
+
+        <iframe
+          class="map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Augusto+Legu%C3%ADa+Sur+79,+Las+Condes,+Santiago,+Chile&output=embed"
+          title="Ubicación de la oficina">
+        </iframe>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          Reymond Colombo &amp; Cía
+          <small>Abogados · Derecho de familia</small>
+        </a>
+        <p>Estudio jurídico chileno especializado en derecho de familia. Ejercicio profesional con foco en Santiago.</p>
+      </div>
+      <div>
+        <h4>Áreas</h4>
+        <p>
+          <a href="#areas">Divorcios</a><br/>
+          <a href="#areas">Pensión de alimentos</a><br/>
+          <a href="#areas">Cuidado personal</a><br/>
+          <a href="#areas">Mediación familiar</a>
+        </p>
+      </div>
+      <div>
+        <h4>Estudio</h4>
+        <p>
+          <a href="#filosofia">Nuestra forma de trabajar</a><br/>
+          <a href="#equipo">Equipo</a><br/>
+          <a href="#proceso">Proceso</a><br/>
+          <a href="#contacto">Contacto</a>
+        </p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>
+          Augusto Leguía Sur 79<br/>
+          Oficina 1501, Las Condes<br/>
+          Santiago, Chile<br/><br/>
+          <a href="tel:+56222316249">+56 2 2231 6249</a><br/>
+          <a href="mailto:rcabogados@rcabogados.cl">rcabogados@rcabogados.cl</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Reymond Colombo &amp; Cía. Todos los derechos reservados.</span>
+      <span>Santiago de Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ==========================================================
+     Sombra al hacer scroll en nav
+     ========================================================== */
+  (function () {
+    var nav = document.getElementById('nav');
+    function onScroll() {
+      if (window.scrollY > 8) nav.classList.add('is-scrolled');
+      else nav.classList.remove('is-scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  /* ==========================================================
+     Año dinámico
+     ========================================================== */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ==========================================================
+     Reveal sutil
+     ========================================================== */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+
+    document.querySelectorAll('section, .hero').forEach(function (el) {
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  }
+</script>
+
+</body>
+</html>
