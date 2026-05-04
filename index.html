@@ -222,13 +222,15 @@
       margin: 0; padding: 0;
     }
     .nav-links a {
-      color: var(--ink);
+      color: var(--muted);
       text-decoration: none;
       font-size: var(--step-1);
       font-family: var(--font-body);
       font-weight: 500;
+      transition: color 180ms ease;
     }
-    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover,
+    .nav-links a.is-active { color: var(--navy); }
     @media (max-width: 880px) {
       .nav-links { display: none; }
     }
@@ -1045,6 +1047,35 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+
+  /* ==========================================================
+     Scroll spy — marca el link de la sección visible
+     ========================================================== */
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var links = document.querySelectorAll('.nav-links a[href^="#"]');
+    var map = {};
+    links.forEach(function (link) {
+      var id = link.getAttribute('href').slice(1);
+      var section = document.getElementById(id);
+      if (section) map[id] = link;
+    });
+
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var link = map[e.target.id];
+        if (!link) return;
+        if (e.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove('is-active'); });
+          link.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+    Object.keys(map).forEach(function (id) {
+      spy.observe(document.getElementById(id));
+    });
   })();
 
   /* ==========================================================
